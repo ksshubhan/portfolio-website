@@ -12,6 +12,8 @@ import {
   ChevronsLeftRight as ChevronsIcon,
   Sun,
   Moon,
+  Menu as MenuIcon,           // NEW: mobile menu icon
+  X as CloseIcon,             // NEW: close icon
 } from "lucide-react";
 
 /* sections */
@@ -29,7 +31,6 @@ const PILL_EASE = "ease-out";
 
 /* ---- MINIMAL THEME (light/dark only) ---- */
 const THEME_KEY = "theme"; // 'light' | 'dark'
-
 function getInitialTheme() {
   const saved = localStorage.getItem(THEME_KEY);
   return saved === "dark" ? "dark" : "light";
@@ -40,17 +41,15 @@ export default function Navbar({ sectionRefs }) {
 
   const [theme, setTheme] = useState(getInitialTheme);
   const isDark = theme === "dark";
+  const [mobileOpen, setMobileOpen] = useState(false); // NEW
 
   useEffect(() => {
-  document.documentElement.setAttribute('data-theme', isDark ? 'dark' : 'light');
-  document.documentElement.style.colorScheme = isDark ? 'dark' : 'light';
-  localStorage.setItem('theme', isDark ? 'dark' : 'light');
+    document.documentElement.setAttribute("data-theme", isDark ? "dark" : "light");
+    document.documentElement.style.colorScheme = isDark ? "dark" : "light";
+    localStorage.setItem("theme", isDark ? "dark" : "light");
   }, [isDark]);
 
   const toggleTheme = () => setTheme((t) => (t === "dark" ? "light" : "dark"));
-  /* ---- END MINIMAL THEME ---- */
-
-
 
   /* nav + pill */
   const navRef = useRef(null);
@@ -96,74 +95,73 @@ export default function Navbar({ sectionRefs }) {
     return () => cancelAnimationFrame(raf);
   }, [updatePill]);
 
+  // Close mobile menu when you click a link
+  const onMobileNavClick = () => setMobileOpen(false);
+
   return (
     <nav ref={navRef} className="fixed top-0 left-0 w-full z-50">
-      <div className="bg-white/70 dark:bg-black/70 backdrop-blur
-                      text-black dark:text-white
-                      border-b border-black/10 dark:border-white/20
-                      transition-colors">
-        <div className="max-w-8xl mx-auto px-4">
-          <div className="flex items-center py-3">
-            {/* LEFT: toggle + brand (near the left edge) */}
-            <div className="flex items-center gap-3 pl-3">
-              {/* Toggle */}
-
-              {/* Theme toggle – knob-only clickable */}
+      <div
+        className="bg-white/70 dark:bg-black/70 backdrop-blur
+                   text-black dark:text-white
+                   border-b border-black/10 dark:border-white/20
+                   transition-colors"
+      >
+        <div className="max-w-8xl mx-auto px-3 sm:px-4">
+          <div className="flex items-center py-2 sm:py-3">
+            {/* LEFT: toggle + brand */}
+            <div className="flex items-center gap-2 sm:gap-3 pl-1 sm:pl-3">
+              {/* Theme toggle */}
               <div className="relative inline-flex items-center select-none">
-                {/* Track (non-interactive) */}
                 <span
-                  className={`pointer-events-none relative block w-[66px] h-[34px] rounded-3xl border
+                  className={`pointer-events-none relative block w-[58px] h-[30px] sm:w-[66px] sm:h-[34px] rounded-3xl border
                               overflow-hidden backdrop-blur-sm transition-colors duration-300
                               ${isDark ? "bg-white/5 border-white/15" : "bg-white border-black/15"}`}
                 >
                   <Sun
-                    className={`absolute right-2 top-1/2 -translate-y-1/2 w-[14px] h-[14px]
+                    className={`absolute right-2 top-1/2 -translate-y-1/2 w-[13px] h-[13px] sm:w-[14px] sm:h-[14px]
                                 transition-opacity duration-[420ms] ease-[cubic-bezier(0.22,1,0.36,1)]
                                 text-yellow-400
                                 ${isDark ? "opacity-0" : "opacity-100"}`}
                     strokeWidth={2}
                   />
                   <Moon
-                    className={`absolute left-2 top-1/2 -translate-y-1/2 w-[14px] h-[14px]
+                    className={`absolute left-2 top-1/2 -translate-y-1/2 w-[13px] h-[13px] sm:w-[14px] sm:h-[14px]
                                 transition-opacity duration-300
                                 ${isDark ? "opacity-100" : "opacity-0"}`}
                     strokeWidth={2}
                   />
                 </span>
-
-                {/* Knob (only interactive element) */}
                 <div
-                  type="button"
                   role="switch"
                   aria-label="Toggle dark mode"
                   aria-checked={isDark}
                   onClick={toggleTheme}
                   className={`absolute top-1/2 -translate-y-1/2
-                        left-[4px] w-[25px] h-[25px] rounded-full z-10
-                        shadow-md cursor-pointer
-                        transition-transform duration-[420ms] ease-[cubic-bezier(0.22,1,0.36,1)]
-                        will-change-transform
-                        ${isDark ? "translate-x-[32px] bg-white" : "translate-x-[1px] bg-black"}`}
-                ></div>
+                              left-[4px] w-[22px] h-[22px] sm:w-[25px] sm:h-[25px]
+                              rounded-full z-10 shadow-md cursor-pointer
+                              transition-transform duration-[420ms] ease-[cubic-bezier(0.22,1,0.36,1)]
+                              will-change-transform
+                              ${isDark ? "translate-x-[28px] sm:translate-x-[32px] bg-white" : "translate-x-[1px] bg-black"}`}
+                />
               </div>
-
-
 
               {/* Brand */}
               <a
                 href="#home"
-                className="hidden sm:flex items-center gap-2
+                className="flex items-center gap-2
                            text-black/90 hover:text-black
                            dark:text-white/90 dark:hover:text-white
                            transition-colors select-none"
               >
-                <ChevronsIcon className="w-[28px] h-[28px]" strokeWidth={1.5} />
-                <span className="font-semibold tracking-tight">Sshubhan Kammari</span>
+                <ChevronsIcon className="w-[24px] h-[24px] sm:w-[28px] sm:h-[28px]" strokeWidth={1.5} />
+                <span className="font-semibold tracking-tight text-sm sm:text-base">
+                  Sshubhan Kammari
+                </span>
               </a>
             </div>
 
-            {/* RIGHT: links + resume */}
-            <div className="ml-auto flex items-center gap-6 pr-4 sm:pr-[120px]">
+            {/* DESKTOP NAV (>= md) */}
+            <div className="ml-auto hidden md:flex items-center gap-6 pr-4 md:pr-[120px]">
               <Scrollspy sectionRefs={sectionRefList} offset={spyOffset - 115}>
                 {({ currentElementIndexInViewport }) => {
                   const idx =
@@ -186,7 +184,7 @@ export default function Navbar({ sectionRefs }) {
                           transitionTimingFunction: PILL_EASE,
                         }}
                       />
-                      <ul className="flex gap-2 sm:gap-3 text-sm sm:text-base relative z-10">
+                      <ul className="flex gap-3 text-base relative z-10">
                         {sections.map(({ id, label, Icon }) => {
                           const isActive = activeId === id;
                           return (
@@ -226,7 +224,7 @@ export default function Navbar({ sectionRefs }) {
                 href="/Resume.pdf"
                 target="_blank"
                 rel="noopener noreferrer"
-                className="inline-flex items-center gap-2 border px-3 py-[4.6px]
+                className="inline-flex items-center gap-2 border px-3 py-[6px]
                            rounded-lg transition-colors
                            border-black/30 text-black hover:bg-black/5
                            dark:border-white/40 dark:text-white dark:hover:bg-white/10"
@@ -235,7 +233,54 @@ export default function Navbar({ sectionRefs }) {
                 <span className="text-sm select-none">Resume</span>
               </a>
             </div>
+
+            {/* MOBILE MENU BUTTON (< md) */}
+            <button
+              className="ml-auto md:hidden inline-flex items-center justify-center rounded-lg px-2 py-1.5
+                         border border-black/10 dark:border-white/10 hover:bg-black/5 dark:hover:bg-white/10"
+              aria-label={mobileOpen ? "Close menu" : "Open menu"}
+              onClick={() => setMobileOpen((o) => !o)}
+            >
+              {mobileOpen ? <CloseIcon className="w-6 h-6" /> : <MenuIcon className="w-6 h-6" />}
+            </button>
           </div>
+        </div>
+      </div>
+
+      {/* MOBILE PANEL */}
+      <div
+        className={`md:hidden transition-[max-height,opacity] duration-300 ease-out overflow-hidden
+                    bg-white/80 dark:bg-black/80 backdrop-blur border-b border-black/10 dark:border-white/10
+                    ${mobileOpen ? "max-h-[420px] opacity-100" : "max-h-0 opacity-0"}`}
+      >
+        <ul className="px-4 py-3 space-y-1">
+          {sections.map(({ id, label, Icon }) => (
+            <li key={id}>
+              <a
+                href={`#${id}`}
+                onClick={onMobileNavClick}
+                className="flex items-center gap-3 px-2 py-2 rounded-lg
+                           text-black dark:text-white hover:bg-black/5 dark:hover:bg-white/10"
+              >
+                <Icon className="w-5 h-5" strokeWidth={2} />
+                <span className="text-base">{label}</span>
+              </a>
+            </li>
+          ))}
+        </ul>
+        <div className="px-4 pb-4">
+          <a
+            href="/Resume.pdf"
+            target="_blank"
+            rel="noopener noreferrer"
+            className="w-full inline-flex items-center justify-center gap-2 border px-3 py-2 rounded-lg
+                       border-black/30 text-black hover:bg-black/5
+                       dark:border-white/40 dark:text-white dark:hover:bg-white/10"
+            onClick={onMobileNavClick}
+          >
+            <DownloadIcon className="w-[16px] h-[16px]" strokeWidth={2} />
+            <span className="text-sm">Resume</span>
+          </a>
         </div>
       </div>
     </nav>
