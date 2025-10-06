@@ -70,7 +70,7 @@ export default function OrbitIcon({
 
   return (
     <div
-      className="absolute left-1/2 top-1/2 z-20"
+      className="absolute left-1/2 top-1/2 z-30"
       style={{
         transform: `translate(-50%, -50%) rotate(${angle}deg) translateX(${radius}px) rotate(${-angle}deg)`,
       }}
