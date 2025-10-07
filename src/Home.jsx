@@ -126,17 +126,17 @@ export default function Home({ sectionRef }) {
 
             {/* ===== Mobile orbit (tight + fewer bubbles) ===== */}
             <div className="sm:hidden">
-              <OrbitIcon angle={170} radius={115} delay={0.0} duration={4.0} float={6}>
-                <Braces className="w-5 h-5" />
+              <OrbitIcon angle={170} radius={150} delay={0.0} duration={4.0} float={6}>
+                <Braces className="w-4 h-4" />
               </OrbitIcon>
-              <OrbitIcon angle={210} radius={120} delay={0.2} duration={5.2} float={6}>
-                <Database className="w-5 h-5" />
+              <OrbitIcon angle={210} radius={160} delay={0.2} duration={5.2} float={6}>
+                <Database className="w-4 h-4" />
               </OrbitIcon>
-              <OrbitIcon angle={ 15} radius={125} delay={0.1} duration={6.0} float={7}>
-                <Code2 className="w-5 h-5" />
+              <OrbitIcon angle={ 15} radius={145} delay={0.1} duration={6.0} float={7}>
+                <Code2 className="w-4 h-4" />
               </OrbitIcon>
-              <OrbitIcon angle={330} radius={135} delay={0.1} duration={5.0} float={7}>
-                <Server className="w-5 h-5" />
+              <OrbitIcon angle={330} radius={175} delay={0.1} duration={5.0} float={7}>
+                <Server className="w-4 h-4" />
               </OrbitIcon>
             </div>
 
