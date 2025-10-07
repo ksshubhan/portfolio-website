@@ -117,7 +117,7 @@ export default function Home({ sectionRef }) {
         {/* ======================= AVATAR + ORBIT ======================= */}
         <div className="md:w-1/2 flex justify-center md:justify-end mt-0">
           {/* Anchor must be a perfect square. Smaller on mobile, original on desktop */}
-          <div className="relative w-[16rem] h-[16rem] sm:w-[22.5rem] sm:h-[22.5rem]">
+          <div className="relative w-[14rem] h-[14rem] sm:w-[22.5rem] sm:h-[22.5rem]">
             <img
               src="/linkedinphoto.JPEG"
               alt="Sshubhan Kammari"
@@ -126,17 +126,17 @@ export default function Home({ sectionRef }) {
 
             {/* ===== Mobile orbit (tight + fewer bubbles) ===== */}
             <div className="sm:hidden">
-              <OrbitIcon angle={170} radius={150} delay={0.0} duration={4.0} float={6}>
-                <Braces className="w-4 h-4" />
+              <OrbitIcon angle={140} radius={170} delay={0.0} duration={4.0} float={6}>
+                <Braces className="w-3 h-3" />
               </OrbitIcon>
               <OrbitIcon angle={210} radius={160} delay={0.2} duration={5.2} float={6}>
-                <Database className="w-4 h-4" />
+                <Database className="w-3 h-3" />
               </OrbitIcon>
-              <OrbitIcon angle={ 15} radius={145} delay={0.1} duration={6.0} float={7}>
-                <Code2 className="w-4 h-4" />
+              <OrbitIcon angle={35} radius={175} delay={0.1} duration={6.0} float={7}>
+                <Code2 className="w-3 h-3" />
               </OrbitIcon>
-              <OrbitIcon angle={330} radius={175} delay={0.1} duration={5.0} float={7}>
-                <Server className="w-4 h-4" />
+              <OrbitIcon angle={310} radius={190} delay={0.1} duration={5.0} float={7}>
+                <Server className="w-3 h-3" />
               </OrbitIcon>
             </div>
 
