@@ -129,7 +129,7 @@ export default function Home({ sectionRef }) {
               <OrbitIcon angle={90} radius={170} delay={0.0} duration={4.0} float={6}>
                 <Braces className="w-4 h-4" />
               </OrbitIcon>
-              <OrbitIcon angle={180} radius={140} delay={0.2} duration={5.2} float={6}>
+              <OrbitIcon angle={180} radius={10} delay={0.2} duration={5.2} float={6}>
                 <Database className="w-4 h-4" />
               </OrbitIcon>
               <OrbitIcon angle={270} radius={175} delay={0.1} duration={6.0} float={7}>
