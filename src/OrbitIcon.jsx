@@ -113,7 +113,7 @@ export default function OrbitIcon({
           onHoverStart={handleHoverStart}
           onHoverEnd={handleHoverEnd}
           className="relative 
-            w-[2.9rem] h-[2.9rem] sm:w-[3.77rem] sm:h-[3.77rem]
+            w-[2.4rem] h-[2.4rem] sm:w-[3.77rem] sm:h-[3.77rem]
             rounded-full bg-white/90 text-black
             flex items-center justify-center border border-white/60
             ring-1 ring-gray-400/30 dark:ring-gray-400/60

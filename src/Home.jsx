@@ -117,7 +117,7 @@ export default function Home({ sectionRef }) {
         {/* ======================= AVATAR + ORBIT ======================= */}
         <div className="md:w-1/2 flex justify-center md:justify-end mt-0">
           {/* Anchor must be a perfect square — smaller on mobile */}
-          <div className="relative w-[14rem] h-[14rem] sm:w-[22.5rem] sm:h-[22.5rem] -mt-6 sm:mt-0">
+          <div className="relative w-[11rem] h-[11rem] sm:w-[22.5rem] sm:h-[22.5rem] -mt-12 sm:mt-0">
             <img
               src="/linkedinphoto.JPEG"
               alt="Sshubhan Kammari"
