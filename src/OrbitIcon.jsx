@@ -104,12 +104,14 @@ export default function OrbitIcon({
           }
           onHoverStart={handleHoverStart}
           onHoverEnd={handleHoverEnd}
-          className="relative w-[3.77rem] h-[3.77rem] rounded-full bg-white/90 text-black
-                     flex items-center justify-center border border-white/60
-                     ring-1 ring-gray-400/30 dark:ring-gray-400/60 
-                     shadow-md hover:shadow-lg transition-shadow duration-300 
-                     dark:shadow-[0_0_8px_2px_rgba(255,255,255,0.3)] cursor-pointer"
-        >
+          className="relative 
+            w-[1.55rem] h-[1.55rem] sm:w-[3.77rem] sm:h-[3.77rem] 
+            rounded-full bg-white/90 text-black
+            flex items-center justify-center border border-white/60
+            ring-1 ring-gray-400/30 dark:ring-gray-400/60 
+            shadow-md hover:shadow-lg transition-shadow duration-300 
+            dark:shadow-[0_0_8px_2px_rgba(255,255,255,0.3)] cursor-pointer"
+          >
           {children}
         </motion.div>
       </motion.div>
