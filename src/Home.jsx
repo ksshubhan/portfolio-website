@@ -135,7 +135,7 @@ export default function Home({ sectionRef }) {
               <OrbitIcon angle={50} radius={175} delay={0.1} duration={6.0} float={7}>
                 <Code2 className="w-4 h-4" />
               </OrbitIcon>
-              <OrbitIcon angle={335} radius={190} delay={0.1} duration={5.0} float={7}>
+              <OrbitIcon angle={280} radius={190} delay={0.1} duration={5.0} float={7}>
                 <Server className="w-4 h-4" />
               </OrbitIcon>
             </div>
