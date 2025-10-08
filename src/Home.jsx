@@ -124,46 +124,41 @@ export default function Home({ sectionRef }) {
               className="absolute inset-0 w-full h-full rounded-full object-cover border-4 border-gray-100 dark:border-white z-10 transition-all duration-300 hover:-translate-y-2"
             />
 
-            {/* ===== Mobile orbit (tight + fewer bubbles) ===== */}
-            <div className="sm:hidden">
-              <OrbitIcon angle={190} radius={160} delay={0.0} duration={4.0} float={6}>
-                <Braces className="w-4 h-4" />
-              </OrbitIcon>
-              <OrbitIcon angle={230} radius={130} delay={0.2} duration={5.2} float={6}>
-                <Database className="w-4 h-4" />
-              </OrbitIcon>
-              <OrbitIcon angle={320} radius={175} delay={0.1} duration={6.0} float={7}>
-                <Code2 className="w-4 h-4" />
-              </OrbitIcon>
-              <OrbitIcon angle={35} radius={190} delay={0.1} duration={5.0} float={7}>
-                <Server className="w-4 h-4" />
-              </OrbitIcon>
-              <OrbitIcon angle={335} radius={325} delay={0.1} duration={5.0} float={7}>
-                <Globe className="w-4 h-4" />
-              </OrbitIcon>
-            </div>
+            {/* ======================= AVATAR + ORBIT ======================= */}
+            <div className="md:w-1/2 flex justify-center md:justify-end mt-0">
+              {/* Anchor must be a perfect square — smaller on mobile */}
+              <div className="relative w-[14rem] h-[14rem] sm:w-[22.5rem] sm:h-[22.5rem] -mt-6 sm:mt-0">
+                <img
+                  src="/linkedinphoto.JPEG"
+                  alt="Sshubhan Kammari"
+                  className="absolute inset-0 w-full h-full rounded-full object-cover border-4 border-gray-100 dark:border-white z-10 transition-all duration-300 hover:-translate-y-2"
+                />
 
-            {/* ===== Desktop orbit (your original layout) ===== */}
-            <div className="hidden sm:block">
-              <OrbitIcon angle={150} radius={300} delay={0.00} duration={3.2} repeatDelay={0.2} float={7} bounceDelay={0.0}>
-                <Globe className="w-6 h-6" />
-              </OrbitIcon>
-              <OrbitIcon angle={185} radius={290} delay={0.25} duration={6.8} repeatDelay={0.1} float={6} bounceDelay={0.4}>
-                <Braces className="w-6 h-6" />
-              </OrbitIcon>
-              <OrbitIcon angle={205} radius={260} delay={0.55} duration={3.51} repeatDelay={0.15} float={5} bounceDelay={0.8}>
-                <Database className="w-6 h-6" />
-              </OrbitIcon>
-              <OrbitIcon angle={20} radius={265} delay={0.35} duration={7.4} repeatDelay={0.05} float={8} bounceDelay={1.2}>
-                <Code2 className="w-6 h-6" />
-              </OrbitIcon>
-              <OrbitIcon angle={335} radius={325} delay={0.1} duration={5.0} repeatDelay={0.12} float={7} bounceDelay={1.6}>
-                <Server className="w-6 h-6" />
-              </OrbitIcon>
-            </div>
+                {/* Orbit icons (same for all screens now, scaling handled in OrbitIcon.jsx) */}
+                <OrbitIcon angle={150} radius={300} delay={0.00} duration={3.2} repeatDelay={0.2} float={7} bounceDelay={0.0}>
+                  <Globe className="w-5 h-5 sm:w-6 sm:h-6" />
+                </OrbitIcon>
 
-            {/* Soft glow behind avatar (stays below icons) */}
-            <div className="pointer-events-none absolute inset-0 rounded-full z-0 shadow-none dark:shadow-[0_0_120px_40px_rgba(255,255,255,0.06)]" />
+                <OrbitIcon angle={185} radius={290} delay={0.25} duration={6.8} repeatDelay={0.1} float={6} bounceDelay={0.4}>
+                  <Braces className="w-5 h-5 sm:w-6 sm:h-6" />
+                </OrbitIcon>
+
+                <OrbitIcon angle={205} radius={260} delay={0.55} duration={3.51} repeatDelay={0.15} float={5} bounceDelay={0.8}>
+                  <Database className="w-5 h-5 sm:w-6 sm:h-6" />
+                </OrbitIcon>
+
+                <OrbitIcon angle={20} radius={265} delay={0.35} duration={7.4} repeatDelay={0.05} float={8} bounceDelay={1.2}>
+                  <Code2 className="w-5 h-5 sm:w-6 sm:h-6" />
+                </OrbitIcon>
+
+                <OrbitIcon angle={335} radius={325} delay={0.1} duration={5.0} repeatDelay={0.12} float={7} bounceDelay={1.6}>
+                  <Server className="w-5 h-5 sm:w-6 sm:h-6" />
+                </OrbitIcon>
+
+                {/* Soft glow behind avatar (stays below icons) */}
+                <div className="pointer-events-none absolute inset-0 rounded-full z-0 shadow-none dark:shadow-[0_0_120px_40px_rgba(255,255,255,0.06)]" />
+              </div>
+            </div>
           </div>
         </div>
       </div>
