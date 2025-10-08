@@ -117,7 +117,7 @@ export default function Home({ sectionRef }) {
         {/* ======================= AVATAR + ORBIT ======================= */}
         <div className="md:w-1/2 flex justify-center md:justify-end mt-0">
           {/* Anchor must be a perfect square. Smaller on mobile, original on desktop */}
-          <div className="relative w-[14rem] h-[14rem] sm:w-[22.5rem] sm:h-[22.5rem]">
+          <div className="relative w-[14rem] h-[14rem] sm:w-[22.5rem] sm:h-[22.5rem] -mt-6 sm:mt-0">
             <img
               src="/linkedinphoto.JPEG"
               alt="Sshubhan Kammari"
@@ -136,6 +136,9 @@ export default function Home({ sectionRef }) {
                 <Code2 className="w-4 h-4" />
               </OrbitIcon>
               <OrbitIcon angle={35} radius={190} delay={0.1} duration={5.0} float={7}>
+                <Server className="w-4 h-4" />
+              </OrbitIcon>
+              <OrbitIcon angle={335} radius={325} delay={0.1} duration={5.0} repeatDelay={0.12} float={7} bounceDelay={1.6}>
                 <Server className="w-4 h-4" />
               </OrbitIcon>
             </div>
