@@ -139,7 +139,7 @@ export default function Home({ sectionRef }) {
                 <Server className="w-4 h-4" />
               </OrbitIcon>
               <OrbitIcon angle={335} radius={325} delay={0.1} duration={5.0} repeatDelay={0.12} float={7} bounceDelay={1.6}>
-                <Server className="w-4 h-4" />
+                <Globe className="w-4 h-4" />
               </OrbitIcon>
             </div>
 
