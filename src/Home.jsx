@@ -10,7 +10,7 @@ export default function Home({ sectionRef }) {
       id="home"
       className="min-h-screen w-full bg-white text-black dark:bg-black dark:text-white flex justify-center items-center px-6 sm:px-8 md:px-16 transition-colors"
     >
-      <div className="max-w-6xl w-full flex flex-col md:flex-row items-center justify-between gap-16 sm:gap-20 md:gap-56 pt-24">
+      <div className="max-w-6xl w-full flex flex-col md:flex-row items-center justify-between gap-16 sm:gap-20 md:gap-56 pt-24 mb-24 sm:mb-0">
         {/* ======================= TEXT ======================= */}
         <div className="md:w-1/2 text-center md:text-left md:-ml-24">
           <motion.p
@@ -117,7 +117,7 @@ export default function Home({ sectionRef }) {
         {/* ======================= AVATAR + ORBIT ======================= */}
         <div className="md:w-1/2 flex justify-center md:justify-end mt-0">
           {/* Anchor must be a perfect square — smaller on mobile */}
-          <div className="relative w-[11rem] h-[11rem] sm:w-[22.5rem] sm:h-[22.5rem] -mt-12 sm:mt-0">
+          <div className="relative w-[17.5rem] h-[17.5rem] sm:w-[22.5rem] sm:h-[22.5rem] -mt-12 sm:mt-0">
             <img
               src="/linkedinphoto.JPEG"
               alt="Sshubhan Kammari"
