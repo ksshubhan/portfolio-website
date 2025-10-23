@@ -3,7 +3,7 @@ export default function Projects({ sectionRef }) {
     {
       title: 'QuantVision',
       description:
-        'An interactive quant strategy dashboard built with React and FastAPI. Visualizes algorithmic trading performance through dynamic equity curves, Sharpe ratios, and backtest metrics. (Backend hosted on Render free tier — may take a few seconds to wake up.)',
+        'An interactive quant strategy dashboard built with React and FastAPI. Visualizes algorithmic trading performance through dynamic equity curves, Sharpe ratios, and backtest metrics.',
       tags: ['React', 'FastAPI', 'Python', 'Recharts'],
       image: '/quantvision-preview.png', // ✅ place a screenshot in your /public/assets folder
       liveDemo: 'https://quantvision.vercel.app',
@@ -37,15 +37,15 @@ export default function Projects({ sectionRef }) {
           {projectData.map((project, index) => (
             <div
               key={index}
-              className="w-full max-w-5xl mx-auto bg-gray-100 dark:bg-gray-800 rounded-3xl shadow-lg p-6 flex flex-col md:flex-row gap-6 hover:scale-[1.01] border border-gray-300 dark:border-gray-600 transition-transform duration-300"
+              className="w-full max-w-6xl mx-auto bg-gray-100 dark:bg-gray-800 rounded-3xl shadow-lg p-8 flex flex-col md:flex-row gap-6 hover:scale-[1.01] border border-gray-300 dark:border-gray-600 transition-transform duration-300"
             >
               {/* Project Image */}
-              <div className="w-full md:w-1/2 h-48 bg-gray-300 dark:bg-gray-700 rounded-xl overflow-hidden">
+              <div className="w-full md:w-1/2 h-64 lg:h-72 bg-gray-300 dark:bg-gray-700 rounded-xl overflow-hidden">
                 {project.image ? (
                   <img
                     src={project.image}
                     alt={project.title}
-                    className="w-full h-full object-cover rounded-xl hover:scale-105 transition-transform duration-300"
+                    className="w-full h-full object-contain rounded-xl hover:scale-105 transition-transform duration-300"
                   />
                 ) : (
                   <div className="w-full h-full bg-gray-300 dark:bg-gray-700 animate-pulse" />
