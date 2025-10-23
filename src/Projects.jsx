@@ -44,7 +44,7 @@ export default function Projects({ sectionRef }) {
                 >
                   {/* Image */}
                   {project.image && (
-                    <div className="w-full md:w-[40%] h-40 lg:h-48 rounded-xl overflow-hidden flex items-center justify-center">
+                    <div className="w-full md:w-[40%] h-40 lg:h-44 rounded-xl overflow-hidden flex items-center justify-center">
                       <img
                         src={project.image}
                         alt={project.title}
@@ -103,7 +103,7 @@ export default function Projects({ sectionRef }) {
                             hover:shadow-md transition-all duration-300 min-h-[13rem]"
                 >
                   {/* Placeholder Image */}
-                  <div className="w-full md:w-[40%] h-40 lg:h-48 bg-gray-300 dark:bg-gray-700 rounded-xl animate-pulse" />
+                  <div className="w-full md:w-[40%] h-40 lg:h-44 bg-gray-300 dark:bg-gray-700 rounded-xl animate-pulse" />
 
                   {/* Text Section */}
                   <div className="flex flex-col justify-center text-left w-full md:w-[60%] space-y-3">
