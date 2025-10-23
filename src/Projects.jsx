@@ -3,7 +3,7 @@ export default function Projects({ sectionRef }) {
     {
       title: 'QuantVision',
       description:
-        'An interactive quant strategy dashboard built with React and FastAPI. Visualises algorithmic trading performance through dynamic equity curves, Sharpe ratios, and backtest metrics.',
+        'An interactive quant strategy dashboard built to visualise algorithmic trading performance through dynamic equity curves, Sharpe ratios and backtest metrics.',
       tags: ['React', 'FastAPI', 'Python', 'Recharts'],
       image: '/quantvision-preview.png',
       code: 'https://github.com/ksshubhan/quantvision-frontend',
