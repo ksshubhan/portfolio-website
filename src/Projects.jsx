@@ -36,10 +36,10 @@ export default function Projects({ sectionRef }) {
             <div key={index}>
               {project.status === 'complete' ? (
                 <div
-                  className="w-full max-w-[88rem] mx-auto bg-white dark:bg-gray-800
+                  className="w-full max-w-5xl mx-auto bg-white dark:bg-gray-800
                             text-gray-900 dark:text-white rounded-2xl shadow-sm
                             border border-gray-200 dark:border-gray-700
-                            flex flex-col md:flex-row items-center gap-6 p-6 md:p-7
+                            flex flex-col md:flex-row items-center gap-6 p-5 md:p-6
                             hover:shadow-md transition-all duration-300"
                 >
                   {/* Image */}
