@@ -5,17 +5,17 @@ export default function Projects({ sectionRef }) {
       description:
         'An interactive quant strategy dashboard built with React and FastAPI. Visualises algorithmic trading performance through dynamic equity curves, Sharpe ratios, and backtest metrics.',
       tags: ['React', 'FastAPI', 'Python', 'Recharts'],
-      image: '/quantvision-preview.png', // ✅ place a screenshot in your /public/assets folder
-      liveDemo: 'https://quantvision.vercel.app',
+      image: '/quantvision-preview.png',
       code: 'https://github.com/ksshubhan/quantvision-frontend',
-      progress: 100,
+      demo: 'https://quantvision.vercel.app',
+      status: 'complete',
     },
     {
       title: 'Coming Soon',
       description:
         "This project is currently in progress. Check back soon to see what I'm building!",
       tags: ['React', 'Tailwind CSS', 'Fintech'],
-      progress: 10,
+      status: 'in-progress',
     },
   ];
 
@@ -23,92 +23,105 @@ export default function Projects({ sectionRef }) {
     <section
       ref={sectionRef}
       id="projects"
-      className="relative w-full bg-gray-100 dark:bg-gray-900 text-black dark:text-white py-16 pb-[5.5rem] scroll-mt-24 overflow-hidden z-10 border-t border-white dark:border-gray-900"
+      className="relative w-full bg-gray-100 dark:bg-gray-900 text-black dark:text-white py-16 pb-[5.5rem] border-t border-white dark:border-gray-900 scroll-mt-24"
     >
       <div className="max-w-6xl mx-auto px-6 text-center">
-        <h2 className="text-4xl sm:text-5xl font-bold mb-2 pb-[0.4rem]">
-          Featured Projects
-        </h2>
+        <h2 className="text-4xl sm:text-5xl font-bold mb-2 pb-[0.4rem]">Featured Projects</h2>
         <p className="text-gray-600 dark:text-gray-400 mt-5 mb-8 text-base sm:text-[1.11rem]">
           Here are some of my recent projects that showcase my skills and experience.
         </p>
 
         <div className="grid grid-cols-1 gap-10 mt-16">
           {projectData.map((project, index) => (
-            <div
-              key={index}
-              className="w-full max-w-[88rem] mx-auto bg-gray-100 dark:bg-gray-800 
-                        text-white rounded-3xl shadow-lg px-8 py-6
-                        flex flex-col md:flex-row gap-8 transition-transform duration-300
-                        hover:scale-[1.01] border border-gray-300 dark:border-gray-600"
-            >
-              {project.image ? (
-                <div className="w-full md:w-[40%] h-44 lg:h-48 rounded-2xl overflow-hidden flex items-center justify-center -ml-3">
-                  <img
-                    src={project.image}
-                    alt={project.title}
-                    className="w-full h-full object-cover rounded-2xl transition-transform duration-500 hover:scale-[1.03]"
-                  />
+            <div key={index}>
+              {/* === If project is complete === */}
+              {project.status === 'complete' ? (
+                <div
+                  className="w-full max-w-[88rem] mx-auto bg-white dark:bg-gray-800
+                             text-gray-900 dark:text-white rounded-2xl shadow-sm
+                             border border-gray-200 dark:border-gray-700
+                             flex flex-col md:flex-row items-center gap-8 p-6 md:p-8
+                             hover:shadow-md transition-all duration-300"
+                >
+                  {/* Image */}
+                  {project.image && (
+                    <div className="w-full md:w-[42%] h-44 lg:h-52 rounded-xl overflow-hidden flex items-center justify-center">
+                      <img
+                        src={project.image}
+                        alt={project.title}
+                        className="w-full h-full object-cover rounded-xl transition-transform duration-500 hover:scale-[1.03]"
+                      />
+                    </div>
+                  )}
+
+                  {/* Text */}
+                  <div className="flex flex-col justify-center text-left w-full md:w-[58%] space-y-4">
+                    <h3 className="text-2xl font-semibold">{project.title}</h3>
+                    <p className="text-gray-600 dark:text-gray-300 text-[0.95rem] leading-relaxed">
+                      {project.description}
+                    </p>
+
+                    {/* Tags */}
+                    <div className="flex flex-wrap gap-2 mt-2">
+                      {project.tags.map((tag, i) => (
+                        <span
+                          key={i}
+                          className="px-3 py-1 text-sm bg-gray-100 dark:bg-gray-700 text-gray-800 dark:text-gray-300 rounded-md"
+                        >
+                          {tag}
+                        </span>
+                      ))}
+                    </div>
+
+                    {/* Buttons */}
+                    <div className="flex gap-3 mt-3">
+                      <a
+                        href={project.code}
+                        className="px-4 py-2 text-sm font-medium border border-gray-300 dark:border-gray-600 rounded-lg hover:bg-gray-100 dark:hover:bg-gray-700 transition"
+                        target="_blank"
+                        rel="noopener noreferrer"
+                      >
+                        View Code
+                      </a>
+                      <a
+                        href={project.demo}
+                        className="px-4 py-2 text-sm font-medium bg-black text-white dark:bg-white dark:text-black rounded-lg hover:opacity-90 transition"
+                        target="_blank"
+                        rel="noopener noreferrer"
+                      >
+                        Live Demo
+                      </a>
+                    </div>
+                  </div>
                 </div>
               ) : (
-                <div className="w-full md:w-[40%] h-44 lg:h-48 bg-gray-300 dark:bg-gray-700 rounded-2xl animate-pulse -ml-3" />
-              )}
-
-
-              {/* Project Details */}
-              <div className="flex flex-col justify-center text-left w-full md:w-1/2">
-                <h3 className="text-2xl font-semibold text-black dark:text-white mb-2">
-                  {project.title}
-                </h3>
-                <p className="text-gray-700 dark:text-gray-300 mb-4 leading-relaxed">
-                  {project.description}
-                </p>
-
-                {/* Tags */}
-                <div className="flex flex-wrap gap-2 mb-4">
-                  {project.tags.map((tag, i) => (
-                    <span
-                      key={i}
-                      className="bg-gray-200 dark:bg-gray-700 text-gray-800 dark:text-gray-300 text-sm font-medium px-3 py-1 rounded-md"
-                    >
-                      {tag}
-                    </span>
-                  ))}
-                </div>
-
-                {/* Links (if available) */}
-                {project.liveDemo && (
-                  <div className="flex gap-3 mb-4">
-                    <a
-                      href={project.code}
-                      target="_blank"
-                      rel="noopener noreferrer"
-                      className="text-sm px-4 py-2 rounded-md bg-gray-200 dark:bg-gray-700 text-gray-800 dark:text-gray-300 font-medium hover:bg-gray-300 dark:hover:bg-gray-600 transition-colors"
-                    >
-                      View Code
-                    </a>
-                    <a
-                      href={project.liveDemo}
-                      target="_blank"
-                      rel="noopener noreferrer"
-                      className="text-sm px-4 py-2 rounded-md bg-black text-white font-medium hover:bg-gray-800 transition-colors"
-                    >
-                      Live Demo
-                    </a>
+                /* === If project is still in progress === */
+                <div
+                  className="w-full max-w-5xl mx-auto bg-gray-100 dark:bg-gray-800 text-white rounded-3xl shadow-lg p-6
+                             flex flex-col md:flex-row gap-6 transition-transform duration-300
+                             hover:scale-[1.01] border border-gray-300 dark:border-gray-600"
+                >
+                  <div className="w-full md:w-1/2 h-48 bg-gray-300 dark:bg-gray-700 rounded-xl animate-pulse" />
+                  <div className="flex flex-col justify-center text-left w-full md:w-1/2">
+                    <h3 className="text-2xl text-black dark:text-white font-semibold mb-2">{project.title}</h3>
+                    <p className="text-gray-700 dark:text-gray-300 mb-4">{project.description}</p>
+                    <div className="flex flex-wrap gap-2 mb-4">
+                      {project.tags.map((tag, i) => (
+                        <span
+                          key={i}
+                          className="px-3 py-1 text-sm bg-gray-200 dark:bg-gray-700 text-gray-800 dark:text-gray-300 rounded-md"
+                        >
+                          {tag}
+                        </span>
+                      ))}
+                    </div>
+                    <div className="w-full h-2 bg-gray-300 dark:bg-gray-600 rounded-full mt-1">
+                      <div className="w-1/10 h-full bg-black dark:bg-white rounded-full" />
+                    </div>
+                    <p className="text-xs text-gray-500 dark:text-gray-400 mt-[10px]">10% complete</p>
                   </div>
-                )}
-
-                {/* Progress bar */}
-                <div className="w-full h-2 bg-gray-300 dark:bg-gray-600 rounded-full mt-2">
-                  <div
-                    className="h-full bg-black dark:bg-white rounded-full transition-all"
-                    style={{ width: `${project.progress}%` }}
-                  />
                 </div>
-                <p className="text-xs text-gray-500 dark:text-gray-400 mt-[10px]">
-                  {project.progress}% complete
-                </p>
-              </div>
+              )}
             </div>
           ))}
         </div>
