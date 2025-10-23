@@ -36,11 +36,11 @@ export default function Projects({ sectionRef }) {
             <div key={index}>
               {project.status === 'complete' ? (
                 <div
-                  className="w-full max-w-[88rem] mx-auto bg-white dark:bg-gray-800
-                            text-gray-900 dark:text-white rounded-2xl shadow-sm
-                            border border-gray-200 dark:border-gray-700
-                            flex flex-col md:flex-row items-center gap-6 p-6 md:p-7
-                            hover:shadow-md transition-all duration-300"
+                  className="w-full max-w-5xl mx-auto bg-white dark:bg-gray-800
+                             text-gray-900 dark:text-white rounded-2xl shadow-sm
+                             border border-gray-200 dark:border-gray-700
+                             flex flex-col md:flex-row items-center gap-6 p-5 md:p-6
+                             hover:shadow-md transition-all duration-300 min-h-[13rem]"
                 >
                   {/* Image */}
                   {project.image && (
@@ -96,16 +96,14 @@ export default function Projects({ sectionRef }) {
               ) : (
                 /* === If project is still in progress === */
                 <div
-                  className="w-full max-w-[88rem] mx-auto bg-white dark:bg-gray-800
+                  className="w-full max-w-5xl mx-auto bg-white dark:bg-gray-800
                             text-gray-900 dark:text-white rounded-2xl shadow-sm
                             border border-gray-200 dark:border-gray-700
-                            flex flex-col md:flex-row items-center gap-6 p-6 md:p-7
-                            hover:shadow-md transition-all duration-300"
+                            flex flex-col md:flex-row items-center gap-6 p-5 md:p-6
+                            hover:shadow-md transition-all duration-300 min-h-[13rem]"
                 >
                   {/* Placeholder Image */}
-                  <div className="w-full md:w-[40%] h-40 lg:h-48 bg-gray-200 dark:bg-gray-700 rounded-xl flex items-center justify-center">
-                    <div className="w-[90%] h-[85%] bg-gray-300 dark:bg-gray-600 rounded-xl animate-pulse" />
-                  </div>
+                  <div className="w-full md:w-[40%] h-40 lg:h-48 bg-gray-300 dark:bg-gray-700 rounded-xl animate-pulse" />
 
                   {/* Text Section */}
                   <div className="flex flex-col justify-center text-left w-full md:w-[60%] space-y-3">
