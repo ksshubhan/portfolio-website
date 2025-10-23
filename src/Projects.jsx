@@ -40,15 +40,15 @@ export default function Projects({ sectionRef }) {
               className="w-full max-w-6xl mx-auto bg-gray-100 dark:bg-gray-800 rounded-3xl shadow-lg p-8 flex flex-col md:flex-row gap-6 hover:scale-[1.01] border border-gray-300 dark:border-gray-600 transition-transform duration-300"
             >
               {project.image ? (
-                <div className="w-full md:w-[45%] h-60 lg:h-64 rounded-2xl overflow-hidden flex items-center justify-center">
+                <div className="w-full md:w-[45%] h-60 lg:h-64 rounded-3xl overflow-hidden flex items-center justify-center -ml-2 md:-ml-4">
                   <img
                     src={project.image}
                     alt={project.title}
-                    className="w-full h-full object-contain rounded-2xl transition-transform duration-500 hover:scale-[1.04]"
+                    className="w-full h-full object-cover rounded-3xl transition-transform duration-500 hover:scale-[1.03]"
                   />
                 </div>
               ) : (
-                <div className="w-full md:w-1/2 h-64 bg-gray-300 dark:bg-gray-700 rounded-xl animate-pulse" />
+                <div className="w-full md:w-[45%] h-60 lg:h-64 bg-gray-300 dark:bg-gray-700 rounded-3xl animate-pulse -ml-2 md:-ml-4" />
               )}
 
               {/* Project Details */}
