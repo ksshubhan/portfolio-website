@@ -37,7 +37,7 @@ export default function Projects({ sectionRef }) {
           {projectData.map((project, index) => (
             <div
               key={index}
-              className="w-full max-w-6xl mx-auto bg-gray-100 dark:bg-gray-800 rounded-3xl shadow-lg p-8 flex flex-col md:flex-row gap-6 hover:scale-[1.01] border border-gray-300 dark:border-gray-600 transition-transform duration-300"
+              className="w-full max-w-7xl mx-auto bg-gray-100 dark:bg-gray-800 rounded-3xl shadow-lg p-8 flex flex-col md:flex-row gap-6 hover:scale-[1.01] border border-gray-300 dark:border-gray-600 transition-transform duration-300"
             >
               {project.image ? (
                 <div className="w-full md:w-[45%] h-60 lg:h-64 rounded-3xl overflow-hidden flex items-center justify-center -ml-2 md:-ml-4">
