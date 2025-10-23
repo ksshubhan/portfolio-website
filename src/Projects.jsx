@@ -96,28 +96,41 @@ export default function Projects({ sectionRef }) {
               ) : (
                 /* === If project is still in progress === */
                 <div
-                  className="w-full max-w-5xl mx-auto bg-gray-100 dark:bg-gray-800 text-white rounded-3xl shadow-lg p-6
-                             flex flex-col md:flex-row gap-6 transition-transform duration-300
-                             hover:scale-[1.01] border border-gray-300 dark:border-gray-600"
+                  className="w-full max-w-[88rem] mx-auto bg-white dark:bg-gray-800
+                            text-gray-900 dark:text-white rounded-2xl shadow-sm
+                            border border-gray-200 dark:border-gray-700
+                            flex flex-col md:flex-row items-center gap-6 p-6 md:p-7
+                            hover:shadow-md transition-all duration-300"
                 >
-                  <div className="w-full md:w-1/2 h-48 bg-gray-300 dark:bg-gray-700 rounded-xl animate-pulse" />
-                  <div className="flex flex-col justify-center text-left w-full md:w-1/2">
-                    <h3 className="text-2xl text-black dark:text-white font-semibold mb-2">{project.title}</h3>
-                    <p className="text-gray-700 dark:text-gray-300 mb-4">{project.description}</p>
-                    <div className="flex flex-wrap gap-2 mb-4">
+                  {/* Placeholder Image */}
+                  <div className="w-full md:w-[40%] h-40 lg:h-48 bg-gray-200 dark:bg-gray-700 rounded-xl flex items-center justify-center">
+                    <div className="w-[90%] h-[85%] bg-gray-300 dark:bg-gray-600 rounded-xl animate-pulse" />
+                  </div>
+
+                  {/* Text Section */}
+                  <div className="flex flex-col justify-center text-left w-full md:w-[60%] space-y-3">
+                    <h3 className="text-2xl font-semibold">{project.title}</h3>
+                    <p className="text-gray-700 dark:text-gray-300 text-[0.93rem] leading-relaxed">
+                      {project.description}
+                    </p>
+
+                    {/* Tags */}
+                    <div className="flex flex-wrap gap-2 mt-1">
                       {project.tags.map((tag, i) => (
                         <span
                           key={i}
-                          className="px-3 py-1 text-sm bg-gray-200 dark:bg-gray-700 text-gray-800 dark:text-gray-300 rounded-md"
+                          className="px-3 py-[0.25rem] text-[0.83rem] bg-gray-100 dark:bg-gray-700 text-gray-800 dark:text-gray-300 rounded-md"
                         >
                           {tag}
                         </span>
                       ))}
                     </div>
-                    <div className="w-full h-2 bg-gray-300 dark:bg-gray-600 rounded-full mt-1">
-                      <div className="w-1/10 h-full bg-black dark:bg-white rounded-full" />
+
+                    {/* Progress Bar */}
+                    <div className="w-full h-2 bg-gray-300 dark:bg-gray-600 rounded-full mt-2">
+                      <div className="w-[10%] h-full bg-black dark:bg-white rounded-full" />
                     </div>
-                    <p className="text-xs text-gray-500 dark:text-gray-400 mt-[10px]">10% complete</p>
+                    <p className="text-xs text-gray-500 dark:text-gray-400 mt-[6px]">10% complete</p>
                   </div>
                 </div>
               )}
