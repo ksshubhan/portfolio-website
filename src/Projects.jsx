@@ -34,18 +34,17 @@ export default function Projects({ sectionRef }) {
         <div className="grid grid-cols-1 gap-10 mt-16">
           {projectData.map((project, index) => (
             <div key={index}>
-              {/* === If project is complete === */}
               {project.status === 'complete' ? (
                 <div
                   className="w-full max-w-[88rem] mx-auto bg-white dark:bg-gray-800
-                             text-gray-900 dark:text-white rounded-2xl shadow-sm
-                             border border-gray-200 dark:border-gray-700
-                             flex flex-col md:flex-row items-center gap-8 p-6 md:p-8
-                             hover:shadow-md transition-all duration-300"
+                            text-gray-900 dark:text-white rounded-2xl shadow-sm
+                            border border-gray-200 dark:border-gray-700
+                            flex flex-col md:flex-row items-center gap-6 p-6 md:p-7
+                            hover:shadow-md transition-all duration-300"
                 >
                   {/* Image */}
                   {project.image && (
-                    <div className="w-full md:w-[42%] h-44 lg:h-52 rounded-xl overflow-hidden flex items-center justify-center">
+                    <div className="w-full md:w-[40%] h-40 lg:h-48 rounded-xl overflow-hidden flex items-center justify-center">
                       <img
                         src={project.image}
                         alt={project.title}
@@ -54,19 +53,19 @@ export default function Projects({ sectionRef }) {
                     </div>
                   )}
 
-                  {/* Text */}
-                  <div className="flex flex-col justify-center text-left w-full md:w-[58%] space-y-4">
+                  {/* Text Section */}
+                  <div className="flex flex-col justify-center text-left w-full md:w-[60%] space-y-3">
                     <h3 className="text-2xl font-semibold">{project.title}</h3>
-                    <p className="text-gray-600 dark:text-gray-300 text-[0.95rem] leading-relaxed">
+                    <p className="text-gray-600 dark:text-gray-300 text-[0.93rem] leading-relaxed">
                       {project.description}
                     </p>
 
                     {/* Tags */}
-                    <div className="flex flex-wrap gap-2 mt-2">
+                    <div className="flex flex-wrap gap-2 mt-1">
                       {project.tags.map((tag, i) => (
                         <span
                           key={i}
-                          className="px-3 py-1 text-sm bg-gray-100 dark:bg-gray-700 text-gray-800 dark:text-gray-300 rounded-md"
+                          className="px-3 py-[0.25rem] text-[0.83rem] bg-gray-100 dark:bg-gray-700 text-gray-800 dark:text-gray-300 rounded-md"
                         >
                           {tag}
                         </span>
@@ -74,10 +73,10 @@ export default function Projects({ sectionRef }) {
                     </div>
 
                     {/* Buttons */}
-                    <div className="flex gap-3 mt-3">
+                    <div className="flex gap-2.5 mt-2">
                       <a
                         href={project.code}
-                        className="px-4 py-2 text-sm font-medium border border-gray-300 dark:border-gray-600 rounded-lg hover:bg-gray-100 dark:hover:bg-gray-700 transition"
+                        className="px-3 py-[0.45rem] text-[0.82rem] font-medium border border-gray-300 dark:border-gray-600 rounded-md hover:bg-gray-100 dark:hover:bg-gray-700 transition"
                         target="_blank"
                         rel="noopener noreferrer"
                       >
@@ -85,7 +84,7 @@ export default function Projects({ sectionRef }) {
                       </a>
                       <a
                         href={project.demo}
-                        className="px-4 py-2 text-sm font-medium bg-black text-white dark:bg-white dark:text-black rounded-lg hover:opacity-90 transition"
+                        className="px-3 py-[0.45rem] text-[0.82rem] font-medium bg-black text-white dark:bg-white dark:text-black rounded-md hover:opacity-90 transition"
                         target="_blank"
                         rel="noopener noreferrer"
                       >
